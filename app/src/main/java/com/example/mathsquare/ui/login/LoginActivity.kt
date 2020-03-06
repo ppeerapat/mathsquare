@@ -19,6 +19,7 @@ import android.widget.Toast
 
 import com.example.mathsquare.R
 import com.example.mathsquare.ui.main.MainActivity
+import com.example.mathsquare.ui.register.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {

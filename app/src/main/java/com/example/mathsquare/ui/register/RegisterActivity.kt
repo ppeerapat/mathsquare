@@ -2,6 +2,7 @@ package com.example.mathsquare.ui.register
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mathsquare.R
 
 class RegisterActivity : AppCompatActivity() {
 
