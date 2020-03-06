@@ -1,6 +1,9 @@
 package com.example.mathsquare.data
 
+import android.util.Log
 import com.example.mathsquare.data.model.LoggedInUser
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import java.io.IOException
 
 /**
@@ -8,18 +11,30 @@ import java.io.IOException
  */
 class LoginDataSource {
 
-    fun login(username: String, password: String): Result<LoggedInUser> {
-        try {
-            // TODO: handle loggedInUser authentication
-            val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), "Jane Doe")
-            return Result.Success(fakeUser)
-        } catch (e: Throwable) {
-            return Result.Error(IOException("Error logging in", e))
+    private var auth: FirebaseAuth
+    init{
+        auth = FirebaseAuth.getInstance()
+    }
+
+    fun login(username: String, password: String): Result<FirebaseUser> {
+        auth.signInWithEmailAndPassword(username, password)
+
+        if(auth.currentUser!=null){
+            val user: FirebaseUser = auth.currentUser as FirebaseUser
+            return Result.Success(user)
+        }else{
+            return Result.Error(IOException())
         }
+
     }
 
     fun logout() {
         // TODO: revoke authentication
+
+    }
+
+    companion object {
+        private const val TAG = "EmailPassword"
     }
 }
 

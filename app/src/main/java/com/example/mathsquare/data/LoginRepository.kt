@@ -1,6 +1,7 @@
 package com.example.mathsquare.data
 
 import com.example.mathsquare.data.model.LoggedInUser
+import com.google.firebase.auth.FirebaseUser
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -10,7 +11,7 @@ import com.example.mathsquare.data.model.LoggedInUser
 class LoginRepository(val dataSource: LoginDataSource) {
 
     // in-memory cache of the loggedInUser object
-    var user: LoggedInUser? = null
+    var user: FirebaseUser? = null
         private set
 
     val isLoggedIn: Boolean
@@ -27,7 +28,7 @@ class LoginRepository(val dataSource: LoginDataSource) {
         dataSource.logout()
     }
 
-    fun login(username: String, password: String): Result<LoggedInUser> {
+    fun login(username: String, password: String): Result<FirebaseUser> {
         // handle login
         val result = dataSource.login(username, password)
 
@@ -38,7 +39,7 @@ class LoginRepository(val dataSource: LoginDataSource) {
         return result
     }
 
-    private fun setLoggedInUser(loggedInUser: LoggedInUser) {
+    private fun setLoggedInUser(loggedInUser: FirebaseUser) {
         this.user = loggedInUser
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
