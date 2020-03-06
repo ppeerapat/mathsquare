@@ -16,12 +16,16 @@ import android.widget.ProgressBar
 import android.widget.Toast
 
 import com.example.mathsquare.R
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
 
     private lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        auth = FirebaseAuth.getInstance()
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_login)
@@ -44,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
                 username.error = getString(loginState.usernameError)
             }
             if (loginState.passwordError != null) {
-               password.error = getString(loginState.passwordError)
+                password.error = getString(loginState.passwordError)
             }
         })
 

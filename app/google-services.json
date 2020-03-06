@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "204482979851",
+    "firebase_url": "https://math-square-84d3a.firebaseio.com",
+    "project_id": "math-square-84d3a",
+    "storage_bucket": "math-square-84d3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204482979851:android:71fe7d914339d477de3f0e",
+        "android_client_info": {
+          "package_name": "com.example.mathsquare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204482979851-f5vklf3oe071htrrd0i18avb06iv9og1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mathsquare",
+            "certificate_hash": "d9af91a916a1d2e0a85a3e2d4360ba574b4e0656"
+          }
+        },
+        {
+          "client_id": "204482979851-dsfcn85tc3po8oravo7d3bcqksa52lrj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mathsquare",
+            "certificate_hash": "87f23b4ba1d8f919dc72b15bf233404dd1f3c76e"
+          }
+        },
+        {
+          "client_id": "204482979851-9h9alckcekv5vfdfjgo1raqlgvvjs6t5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtx6eiujuceIzYJ65DMUQYqmSj3D5IuAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204482979851-9h9alckcekv5vfdfjgo1raqlgvvjs6t5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
