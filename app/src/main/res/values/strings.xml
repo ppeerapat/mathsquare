@@ -10,4 +10,10 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="receive_firstname" />
+    <string name="personalinfo">Personal Information</string>
+    <string name="firstname_input">First Name</string>
+    <string name="lastname_input">Last Name</string>
+    <string name="age_input">Age</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
