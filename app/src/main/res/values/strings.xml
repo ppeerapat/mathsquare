@@ -16,4 +16,5 @@
     <string name="lastname_input">Last Name</string>
     <string name="age_input">Age</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="promt_repassword">Re-enter Password</string>
 </resources>

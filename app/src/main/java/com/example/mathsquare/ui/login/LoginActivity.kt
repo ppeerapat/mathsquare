@@ -19,8 +19,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 
 import com.example.mathsquare.R
-import com.example.mathsquare.ui.main.MainActivity
-//import com.example.mathsquare.ui.register.RegisterActivity
+import com.example.mathsquare.ui.register.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -42,8 +41,8 @@ class LoginActivity : AppCompatActivity() {
 
 
         register.setOnClickListener {
-//            val intent = Intent(this, RegisterActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
 
         loginViewModel = ViewModelProviders.of(this, LoginViewModelFactory())
@@ -72,8 +71,6 @@ class LoginActivity : AppCompatActivity() {
             }
             if (loginResult.success != null) {
                 updateUiWithUser(loginResult.success)
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
                 finish()
             }
             setResult(Activity.RESULT_OK)

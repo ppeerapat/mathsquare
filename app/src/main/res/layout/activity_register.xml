@@ -28,102 +28,103 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="@string/firstname_input"
+        android:inputType="text"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        android:text="@string/firstname_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/personalinfo"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="@id/personalinfo" />
 
     <EditText
         android:id="@+id/lastname_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="@string/lastname_input"
+        android:inputType="text"
         android:paddingStart="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingEnd="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        android:text="@string/lastname_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/firstname_input"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/firstname_input" />
 
     <EditText
         android:id="@+id/age_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="@string/age_input"
         android:inputType="number"
         android:paddingStart="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingEnd="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        android:text="@string/age_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lastname_input"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/lastname_input" />
 
     <EditText
         android:id="@+id/email_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="textEmailAddress"
+        android:hint="@string/prompt_email"
+        android:inputType="textWebEmailAddress|textEmailAddress"
         android:paddingStart="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingEnd="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        android:text="@string/prompt_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/age_input"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@id/age_input" />
 
     <EditText
         android:id="@+id/password_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="@string/prompt_password"
         android:inputType="textPassword"
         android:paddingStart="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingEnd="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        android:text="@string/prompt_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email_input"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@id/email_input" />
 
     <EditText
         android:id="@+id/confirm_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="@string/promt_repassword"
         android:inputType="textPassword"
-        android:paddingStart="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingEnd="@dimen/activity_vertical_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_input"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/password_input" />
 
     <Button
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="49dp"
         android:text="@string/action_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
