@@ -9,6 +9,7 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.Window
 import android.view.inputmethod.EditorInfo
@@ -18,13 +19,11 @@ import android.widget.ProgressBar
 import android.widget.Toast
 
 import com.example.mathsquare.R
-import com.example.mathsquare.ui.main.MainActivity
 import com.example.mathsquare.ui.register.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
 
     private lateinit var loginViewModel: LoginViewModel
 
@@ -40,7 +39,6 @@ class LoginActivity : AppCompatActivity() {
         val register = findViewById<Button>(R.id.register)
         val loading = findViewById<ProgressBar>(R.id.loading)
 
-        auth = FirebaseAuth.getInstance()
 
         register.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
@@ -73,8 +71,6 @@ class LoginActivity : AppCompatActivity() {
             }
             if (loginResult.success != null) {
                 updateUiWithUser(loginResult.success)
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
                 finish()
             }
             setResult(Activity.RESULT_OK)

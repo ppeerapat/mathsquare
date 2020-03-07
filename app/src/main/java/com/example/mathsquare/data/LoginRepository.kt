@@ -1,5 +1,6 @@
 package com.example.mathsquare.data
 
+import android.app.Activity
 import com.example.mathsquare.data.model.LoggedInUser
 import com.google.firebase.auth.FirebaseUser
 
@@ -36,6 +37,15 @@ class LoginRepository(val dataSource: LoginDataSource) {
             setLoggedInUser(result.data)
         }
 
+        return result
+    }
+
+    fun register(firstName: String,username: String, password: String): Result<FirebaseUser> {
+        val result = dataSource.register(firstName,username, password)
+
+        if (result is Result.Success) {
+            setLoggedInUser(result.data)
+        }
         return result
     }
 
