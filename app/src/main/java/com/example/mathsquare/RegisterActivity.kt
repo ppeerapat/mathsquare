@@ -107,8 +107,7 @@ class RegisterActivity : AppCompatActivity() {
                 auth.currentUser?.updateProfile(profileUpdates)
                     ?.addOnCompleteListener{
                         if(!it.isSuccessful)return@addOnCompleteListener
-
-                        Toast.makeText(this, "Successfully Created User",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Successfully created User, Welcome: ${auth.currentUser?.displayName}", Toast.LENGTH_SHORT).show()
                         auth.signOut()
                         finish()
                     }

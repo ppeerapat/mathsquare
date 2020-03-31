@@ -38,6 +38,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:text="Lv. 11"
+        android:textColor="#FFFEFE"
         app:layout_constraintStart_toEndOf="@id/login"
         app:layout_constraintTop_toTopOf="parent" />
 
