@@ -46,8 +46,7 @@ class RegisterActivity : AppCompatActivity() {
                 register(
                     displayName,
                     email,
-                    password,
-                    confirmPassword
+                    password
                 )
             }
         }
@@ -97,7 +96,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun register(displayName:String,email:String,password:String,confirmPassword:String){
+    private fun register(displayName:String,email:String,password:String){
         auth.createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener{
                 if(!it.isSuccessful)return@addOnCompleteListener

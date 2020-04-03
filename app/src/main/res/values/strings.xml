@@ -16,4 +16,6 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="title_activity_login">Log in</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="diff_selection">Select Difficulty</string>
+    <string name="select_gamemode">Select Gamemode</string>
 </resources>

@@ -8,66 +8,58 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.text.isDigitsOnly
 import kotlinx.android.synthetic.main.view_question.view.*
 import org.w3c.dom.Text
 import kotlin.math.abs
 import kotlin.math.pow
 
-class BinQuestion @JvmOverloads constructor(
+class HexQuestion @JvmOverloads constructor(
     context: Activity,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
     input: String,
-    s: Int,
-    isHex: Boolean
+    s: Int
 ) : LinearLayout(context, attrs, defStyleAttr){
 
+    var hexans: String = "00"
     var ans: Int = 0
     var score: Int = 0
     init {
         LayoutInflater.from(context)
             .inflate(R.layout.view_question, this, true)
         orientation = HORIZONTAL
-        if(!isHex){
-            ans = input.toInt()
-            value.text = ans.toString()
-        }else{
-            ans = toDecimal(input)
-            value.text = input
-        }
+        hexans = input
+        ans = toDecimal(hexans)
         score = s
+        value.text = ans.toString()
     }
 
     fun toDecimal(hexans:String): Int {
         var tot: Int = 0
-        var i: Int = 0
         for (x in hexans.length-1 downTo 0) {
-            println(x)
             var m = 16.0
-            m = m.pow(i)
-            i++
-            println(abs(x-hexans.length-1))
-            tot += (toNumber(hexans[x].toString()) *m).toInt()
+            m = m.pow(abs(x-hexans.length-1))
+            tot += (toNumber(hexans[x]) * m).toInt()
         }
         return tot
     }
 
-    fun toNumber(s:String): Int{
-        if(!s.isDigitsOnly()){
-            when(s){
-                "A"->return 10
-                "B"->return 11
-                "C"->return 12
-                "D"->return 13
-                "E"->return 14
-                "F"->return 15
+    fun toNumber(c:Char): Int{
+        if(!c.isDigit()){
+            when(c){
+                'A'->return 10
+                'B'->return 11
+                'C'->return 12
+                'D'->return 13
+                'E'->return 14
+                'F'->return 15
             }
         }else{
-            return s.toInt()
+            return c.toInt()
         }
         return 0
     }
+
     fun checkCorrect():Boolean{
         var sum = 0
         if (b1.isChecked){
@@ -96,6 +88,7 @@ class BinQuestion @JvmOverloads constructor(
         }
         return sum==ans
     }
+
 
 
 }

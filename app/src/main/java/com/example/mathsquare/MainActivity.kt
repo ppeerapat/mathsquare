@@ -2,11 +2,12 @@ package com.example.mathsquare
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
+import android.view.LayoutInflater
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.game_popup.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val login = findViewById<Button>(R.id.login)
         val play = findViewById<Button>(R.id.play_game)
         val user = findViewById<TextView>(R.id.logged_user)
+        val exit = findViewById<Button>(R.id.exit_game)
 
         auth = FirebaseAuth.getInstance()
 
@@ -36,10 +38,37 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-
+        exit.setOnClickListener {
+            finish()
+        }
         play.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
-            startActivity(intent)
+            //startActivity(intent)
+            val gamePopup = LayoutInflater.from(this).inflate(R.layout.game_popup,null)
+
+            val mBuilder = AlertDialog.Builder(this)
+                .setView(gamePopup)
+
+            val mAlertDialog = mBuilder.show()
+
+            val gamemode = gamePopup.gamemode
+            val difficulty = gamePopup.difficulty
+
+            val start =  gamePopup.findViewById<Button>(R.id.start)
+            start.setOnClickListener{
+                var gamemodeId: Int = gamemode.checkedRadioButtonId
+                var difficultyId: Int = difficulty.checkedRadioButtonId
+                if(difficultyId!=-1&&gamemodeId!=-1){
+                    val diffselect = gamePopup.findViewById<RadioButton>(difficultyId)
+                    val gamemodeselect = gamePopup.findViewById<RadioButton>(gamemodeId)
+                    intent.putExtra("difficulty",diffToNumber(diffselect.toString()))
+                    intent.putExtra("gamemode",gamemodeToNumber(gamemodeselect.toString()))
+                    mAlertDialog.dismiss()
+                    startActivity(intent)
+                }else{
+                    Toast.makeText(this,"Please Select Gamemode and Difficulty",Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 
@@ -64,5 +93,22 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun diffToNumber(s:String?):Int{
+        when (s){
+            "hard"->return 2
+            "nedium"->return 1
+            "easy"->return 0
+        }
+        return 0
+    }
+    private fun gamemodeToNumber(s:String?):Int{
+        when(s){
+            "decimal"->return 0
+            "hexadecimal"->return 1
+        }
+        return 0
+    }
+
 
 }
