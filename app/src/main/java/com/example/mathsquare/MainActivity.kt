@@ -54,15 +54,17 @@ class MainActivity : AppCompatActivity() {
             val gamemode = gamePopup.gamemode
             val difficulty = gamePopup.difficulty
 
+
             val start =  gamePopup.findViewById<Button>(R.id.start)
             start.setOnClickListener{
                 var gamemodeId: Int = gamemode.checkedRadioButtonId
                 var difficultyId: Int = difficulty.checkedRadioButtonId
                 if(difficultyId!=-1&&gamemodeId!=-1){
+
                     val diffselect = gamePopup.findViewById<RadioButton>(difficultyId)
                     val gamemodeselect = gamePopup.findViewById<RadioButton>(gamemodeId)
-                    intent.putExtra("difficulty",diffToNumber(diffselect.toString()))
-                    intent.putExtra("gamemode",gamemodeToNumber(gamemodeselect.toString()))
+                    intent.putExtra("difficulty",diffToNumber(diffselect.text))
+                    intent.putExtra("gamemode",gamemodeToNumber(gamemodeselect.text))
                     mAlertDialog.dismiss()
                     startActivity(intent)
                 }else{
@@ -94,18 +96,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun diffToNumber(s:String?):Int{
+    private fun diffToNumber(s:CharSequence):Int{
         when (s){
-            "hard"->return 2
-            "nedium"->return 1
-            "easy"->return 0
+            "Hard"->return 2
+            "Medium"->return 1
+            "Easy"->return 0
         }
         return 0
     }
-    private fun gamemodeToNumber(s:String?):Int{
+    private fun gamemodeToNumber(s:CharSequence):Int{
         when(s){
-            "decimal"->return 0
-            "hexadecimal"->return 1
+            "Decimal"->return 0
+            "Hexadecimal"->return 1
         }
         return 0
     }

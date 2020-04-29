@@ -1,18 +1,16 @@
 package com.example.mathsquare
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.common.util.Hex
+import com.example.mathsquare.model.BinQuestion
 import kotlinx.android.synthetic.main.view_question.view.*
+import org.w3c.dom.Text
 import kotlin.random.Random
-import kotlin.random.nextInt
 
 
 class GameActivity : AppCompatActivity() {
@@ -48,15 +46,22 @@ class GameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        var diff = intent.getIntExtra("difficulty",0)
-        var game = intent.getIntExtra("gamemode",0)
-        difficulty = diff
-        gamemode = game
+        difficulty = intent.getIntExtra("difficulty",0)
+        gamemode = intent.getIntExtra("gamemode",0)
 
-        //println(spawnTime)
+        println(difficulty)
+        println(gamemode)
         if(gamemode==1){
-            spawnTime = (spawnTime*1.5).toLong()
+            val show128 = findViewById<TextView>(R.id.show128)
+            val show64 = findViewById<TextView>(R.id.show64)
+            val show32 = findViewById<TextView>(R.id.show32)
+            val show16 = findViewById<TextView>(R.id.show16)
+            show128.text = "8"
+            show64.text= "4"
+            show32.text= "2"
+            show16.text= "1"
         }
+
 
         createQuestion()
         postQuestion = Handler(Looper.getMainLooper())
@@ -75,11 +80,22 @@ class GameActivity : AppCompatActivity() {
         }else {
             val d = diffNumber()
 
-            var b:BinQuestion? = null
+            var b: BinQuestion? = null
+            //System.out.println(gamemode)
             if(gamemode==0){
-                b = BinQuestion(this, input = pickNumber(d).toString(), s = scorePerQ[d],isHex = false)
+                b = BinQuestion(
+                    this,
+                    input = pickNumber(d).toString(),
+                    s = scorePerQ[d],
+                    isHex = false
+                )
             }else{
-                b = BinQuestion(this, input = pickHex(), s = scorePerQ[0],isHex = true)
+                b = BinQuestion(
+                    this,
+                    input = pickHex(),
+                    s = scorePerQ[0],
+                    isHex = true
+                )
             }
 
             b.b1.setOnClickListener {
@@ -109,7 +125,7 @@ class GameActivity : AppCompatActivity() {
             questionList.addView(b, questionList.childCount)
         }
     }
-    fun removeCorrect(b:BinQuestion){
+    fun removeCorrect(b: BinQuestion){
         val questionList = findViewById<LinearLayout>(R.id.ques_list)
         val score_text = findViewById<TextView>(R.id.score)
         if(b.checkCorrect()){

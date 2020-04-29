@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.example.mathsquare.model.Ranking
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
 
 class GameOver : AppCompatActivity() {
@@ -21,6 +21,7 @@ class GameOver : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         val score = intent.getIntExtra("PLAYER_SCORE",0)
+        val gamemode = intent.getIntExtra("GAMEMODE",0)
 
         val score_text = findViewById<TextView>(R.id.score)
 
@@ -30,10 +31,14 @@ class GameOver : AppCompatActivity() {
         if(auth.currentUser!=null) {
             submit.isEnabled = true
             submit.setOnClickListener {
-                val database = FirebaseDatabase.getInstance().getReference("rankings")
+                val database = FirebaseDatabase.getInstance().getReference("rankings"+gamemode.toString())
 
                 val rankingId = database.push().key as String
-                val rank = Ranking(auth.currentUser?.uid,score,auth.currentUser?.displayName)
+                val rank = Ranking(
+                    auth.currentUser?.uid,
+                    score,
+                    auth.currentUser?.displayName
+                )
                 database.child(rankingId).setValue(rank).addOnCompleteListener{
                     Toast.makeText(this,"Ranking Saved Successfully",Toast.LENGTH_SHORT).show()
                 }.addOnFailureListener {
