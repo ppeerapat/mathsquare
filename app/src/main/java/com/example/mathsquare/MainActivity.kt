@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         val play = findViewById<Button>(R.id.play_game)
         val user = findViewById<TextView>(R.id.logged_user)
         val exit = findViewById<Button>(R.id.exit_game)
+        val ranking = findViewById<Button>(R.id.view_ranking)
 
         auth = FirebaseAuth.getInstance()
 
@@ -37,6 +38,10 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, UserActivity::class.java)
                 startActivity(intent)
             }
+        }
+        ranking.setOnClickListener {
+            val intent = Intent(this, RankingActivity::class.java)
+            startActivity(intent)
         }
         exit.setOnClickListener {
             finish()
