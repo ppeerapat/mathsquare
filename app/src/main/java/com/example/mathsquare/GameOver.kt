@@ -28,7 +28,7 @@ class GameOver : AppCompatActivity() {
 
         val score_text = findViewById<TextView>(R.id.score)
 
-        score_text.text = "Total Score: "+score.toString()
+        score_text.text = score.toString()
 
         val submit = findViewById<Button>(R.id.submit_score)
         if(auth.currentUser!=null) {

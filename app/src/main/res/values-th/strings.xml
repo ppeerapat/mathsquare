@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">MathSquare</string>
+    <string name="action_register">สมัครบัญชีใหม่</string>
+    <string name="action_sign_in">เข้าสู่ระบบ</string>
+    <string name="action_sign_in_short">เข้าสู่ระบบ</string>
+    <string name="confirm_password">ยืนยันรหัสผ่าน</string>
+    <string name="diff_selection">เลือกระดับความยาก</string>
+    <string name="display_name">ชื่อผู้ใช้</string>
+    <string name="invalid_password">รหัสของท่านต้องมีตัวอักษร 5 ตัวขึ้นไป</string>
+    <string name="invalid_username">ชื่อผู้ใช้ไม่ถูกต้อง</string>
+    <string name="login_failed">ไม่สามารถเข้าสู่ระบบได้</string>
+    <string name="personalinfo">ข้อมูลส่วนตัว</string>
+    <string name="prompt_email">อีเมล</string>
+    <string name="prompt_password">รหัสผ่าน</string>
+    <string name="en_th">อังกฤษ/ไทย</string>
+    <string name="settings">การตั้งค่า</string>
+    <string name="exit_game">ออกจากเกม</string>
+    <string name="play_game">เริ่มเกม</string>
+    <string name="view_ranking">ลีดเดอร์บอร์ด</string>
+    <string name="select_gamemode">ประเภทเกม</string>
+    <string name="title_activity_login">เข้าสู่ระบบ</string>
+    <string name="title_activity_main">หน้าหลัก</string>
+    <string name="welcome">ยินดีต้อนรับ !</string>
+    <string name="decimal">เลขฐานสิบ</string>
+    <string name="easy">ง่าย</string>
+    <string name="exit">กลับ</string>
+    <string name="game_over">จบเกม</string>
+    <string name="hard">ยาก</string>
+    <string name="hexadecimal">เลขฐานสิบหก</string>
+    <string name="logout">ออกจากระบบ</string>
+    <string name="medium">ปานกลาง</string>
+    <string name="score">"คะแนน: "</string>
+    <string name="start">เริ่ม</string>
+    <string name="submit_score">อัพโหลดคะแนน</string>
+    <string name="total_score">"คะแนนรวม: "</string>
+</resources>

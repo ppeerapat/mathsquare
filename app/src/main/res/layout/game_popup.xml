@@ -26,14 +26,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Decimal" />
+            android:text="@string/decimal" />
 
         <RadioButton
             android:id="@+id/hexadecimal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Hexadecimal" />
+            android:text="@string/hexadecimal" />
     </RadioGroup>
 
     <TextView
@@ -54,21 +54,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Easy" />
+            android:text="@string/easy" />
 
         <RadioButton
             android:id="@+id/medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Medium" />
+            android:text="@string/medium" />
 
         <RadioButton
             android:id="@+id/hard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Hard" />
+            android:text="@string/hard" />
 
     </RadioGroup>
 
@@ -76,6 +76,6 @@
         android:id="@+id/start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start" />
+        android:text="@string/start" />
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.game_popup.view.*
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +23,14 @@ class MainActivity : AppCompatActivity() {
         val play = findViewById<Button>(R.id.play_game)
         val user = findViewById<TextView>(R.id.logged_user)
         val exit = findViewById<Button>(R.id.exit_game)
+        val settings = findViewById<Button>(R.id.view_settings)
         val ranking = findViewById<Button>(R.id.view_ranking)
+
+        val lang = findViewById<Button>(R.id.toggle_language)
+
+        lang.setOnClickListener{
+            changeLang()
+        }
 
         auth = FirebaseAuth.getInstance()
 
@@ -38,10 +46,6 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, UserActivity::class.java)
                 startActivity(intent)
             }
-        }
-        ranking.setOnClickListener {
-            val intent = Intent(this, RankingActivity::class.java)
-            startActivity(intent)
         }
         exit.setOnClickListener {
             finish()
@@ -75,6 +79,16 @@ class MainActivity : AppCompatActivity() {
                 }else{
                     Toast.makeText(this,"Please Select Gamemode and Difficulty",Toast.LENGTH_SHORT).show()
                 }
+            }
+
+            settings.setOnClickListener{
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+            }
+
+            ranking.setOnClickListener{
+                val intent = Intent(this, RankingActivity::class.java)
+                startActivity(intent)
             }
         }
     }
@@ -117,5 +131,22 @@ class MainActivity : AppCompatActivity() {
         return 0
     }
 
+    private fun changeLang(){
+        if(Locale.getDefault().toString() == "th_TH" || Locale.getDefault().toString() == "th") {
+            setLocale("en") //if language is Thai change the language to eng
+        } else if (Locale.getDefault().toString() == "en" || Locale.getDefault().toString() == "en_US") {
+            setLocale("th")// if language eng change to thai
+        }
+    }
+    private fun setLocale(Lang: String?) {
+        val languageCode = Lang
+        val config = resources.configuration
+        val locale = Locale(languageCode) //get locale of this language
 
+        Locale.setDefault(locale) //set new locale or new language
+        config.locale = locale
+        resources.updateConfiguration(config, resources.displayMetrics) //update config to new resource
+
+        recreate() //recreate the app
+    }
 }
