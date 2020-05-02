@@ -8,4 +8,6 @@
     <color name="colorExit">#818181</color>
     <color name="colorSetting">#6BB0DF</color>
     <color name="colorSubmitScore">#694B6B</color>
+    <color name="colorTooltip">#DD6BB0DF</color>
+    <color name="colorTooltip2">#DDF4D16F</color>
 </resources>
