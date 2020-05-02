@@ -44,9 +44,9 @@ class GameOver : AppCompatActivity() {
                     auth.currentUser?.displayName
                 )
                 database.child(rankingId).setValue(rank).addOnCompleteListener{
-                    Toast.makeText(this,"Ranking Saved Successfully",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,getString(R.string.success_ranking),Toast.LENGTH_SHORT).show()
                 }.addOnFailureListener {
-                    Toast.makeText(this,"Failed to save Ranking",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,getString(R.string.fail_ranking),Toast.LENGTH_SHORT).show()
                     submit.isEnabled = true
                 }
                 submit.isEnabled = false

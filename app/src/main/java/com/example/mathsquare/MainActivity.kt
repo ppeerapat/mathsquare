@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         if(auth.currentUser==null){
-            user.setText("Login")
+            user.setText(getString(R.string.log_in))
             login.setOnClickListener {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                     mAlertDialog.dismiss()
                     startActivity(intent)
                 }else{
-                    Toast.makeText(this,"Please Select Gamemode and Difficulty",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,getString(R.string.prompt_pref),Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         if(auth.currentUser==null){
-            user.setText("Login")
+            user.setText(getString(R.string.log_in))
             login.setOnClickListener {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
@@ -144,9 +144,10 @@ class MainActivity : AppCompatActivity() {
         val locale = Locale(languageCode) //get locale of this language
 
         Locale.setDefault(locale) //set new locale or new language
-        config.locale = locale
+        //config.locale = locale
+        config.setLocale(locale)
         resources.updateConfiguration(config, resources.displayMetrics) //update config to new resource
-
+        //createConfigurationContext(config)
         recreate() //recreate the app
     }
 }

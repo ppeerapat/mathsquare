@@ -39,17 +39,17 @@ class LoginActivity : AppCompatActivity() {
 
     fun login(email:String,password:String){
         if(email.isEmpty()||password.isEmpty()){
-            Toast.makeText(this, "Please fill Email and Password", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.fill_email_pw), Toast.LENGTH_SHORT).show()
             return
         }
         auth.signInWithEmailAndPassword(email,password)
             .addOnCompleteListener{
                 if(!it.isSuccessful)return@addOnCompleteListener
-                Toast.makeText(this, "Successfully logged in, Welcome: ${it.result?.user?.displayName}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.success_login)+", "+getString(R.string.wel)+": ${it.result?.user?.displayName}", Toast.LENGTH_SHORT).show()
                 finish()
             }
             .addOnFailureListener{
-                Toast.makeText(this, "Failed to logged in: ${it.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.fail_login)+": ${it.message}", Toast.LENGTH_SHORT).show()
             }
     }
 
