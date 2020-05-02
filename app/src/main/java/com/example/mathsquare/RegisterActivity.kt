@@ -40,7 +40,7 @@ class RegisterActivity : AppCompatActivity() {
             val confirmPassword = confirmPassword.text.toString()
 
             if(!isFilled(displayName)||!isEmail(email)||!isFilled(password)||(confirmPassword!=password)){
-                Toast.makeText(this, "Information Invalid",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.invalid_info),Toast.LENGTH_SHORT).show()
                 submit.isEnabled = true
             }else {
                 register(
@@ -53,7 +53,7 @@ class RegisterActivity : AppCompatActivity() {
 
         displayName.afterTextChanged{
             if(!isFilled(displayName.text.toString())){
-                displayName.error = "Display Name is Blank"
+                displayName.error = getString(R.string.name_blank)
             }else{
                 displayName.error = null
             }
@@ -61,21 +61,21 @@ class RegisterActivity : AppCompatActivity() {
         }
         email.afterTextChanged {
             if(!isEmail(email.text.toString())){
-                email.error = "Email is Incorrect"
+                email.error = getString(R.string.wrong_email)
             }else{
                 email.error = null
             }
         }
         password.afterTextChanged {
             if(!isPassword(password.text.toString())){
-                password.error = "Password must contain at least 6 characters"
+                password.error = getString(R.string.pw_6char)
             }else{
                 password.error = null
             }
         }
         confirmPassword.afterTextChanged {
             if(confirmPassword.text.toString()!=password.text.toString()){
-                confirmPassword.error = "Confirm password is incorrect"
+                confirmPassword.error = getString(R.string.wrong_cfpw)
             }else{
                 confirmPassword.error = null
             }
@@ -106,13 +106,13 @@ class RegisterActivity : AppCompatActivity() {
                 auth.currentUser?.updateProfile(profileUpdates)
                     ?.addOnCompleteListener{
                         if(!it.isSuccessful)return@addOnCompleteListener
-                        Toast.makeText(this, "Successfully created User, Welcome: ${auth.currentUser?.displayName}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getString(R.string.success_create)+", "+getString(R.string.wel)+": ${auth.currentUser?.displayName}", Toast.LENGTH_SHORT).show()
                         auth.signOut()
                         finish()
                     }
             }
             .addOnFailureListener{
-                Toast.makeText(this, "Failed to create User: ${it.message}",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.fail_create)+": ${it.message}",Toast.LENGTH_SHORT).show()
                 submit.isEnabled=true
             }
 

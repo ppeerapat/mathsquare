@@ -3,11 +3,14 @@
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
-    <string name="action_register">"Register"</string>
+    <string name="action_register">Register</string>
     <string name="action_sign_in">Sign in</string>
-    <string name="welcome">"Welcome back!"</string>
+    <string name="welcome">Welcome back!</string>
+    <string name="wel">Welcome</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
+    <string name="log_in">Log in</string>
+    <string name="prompt_pref">Please Select Gamemode and Difficulty</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="receive_firstname" />
@@ -35,4 +38,17 @@
     <string name="hard">Hard</string>
     <string name="start">Start</string>
     <string name="total_score">"Total Score: "</string>
+    <string name="personalinfo">Personal information</string>
+    <string name="invalid_info">Invalid Information</string>
+    <string name="name_blank">Display Name is Blank</string>
+    <string name="wrong_email">Email is Incorrect</string>
+    <string name="pw_6char">Password must contain at least 6 characters</string>
+    <string name="wrong_cfpw">Confirmed password is incorrect</string>
+    <string name="success_create">Successfully created User</string>
+    <string name="fail_create">"Failed to create User</string>
+    <string name="fill_email_pw">Please fill Email and Password</string>
+    <string name="fail_login">"Failed to log in</string>
+    <string name="success_login">Successfully logged in</string>
+    <string name="success_ranking">Ranking Saved Successfully</string>
+    <string name="fail_ranking">Failed to save Ranking</string>
 </resources>

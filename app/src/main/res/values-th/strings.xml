@@ -25,7 +25,7 @@
     <string name="decimal">เลขฐานสิบ</string>
     <string name="easy">ง่าย</string>
     <string name="exit">กลับ</string>
-    <string name="game_over">จบเกม</string>
+    <string name="game_over">จบเกม !</string>
     <string name="hard">ยาก</string>
     <string name="hexadecimal">เลขฐานสิบหก</string>
     <string name="logout">ออกจากระบบ</string>
@@ -34,4 +34,20 @@
     <string name="start">เริ่ม</string>
     <string name="submit_score">อัพโหลดคะแนน</string>
     <string name="total_score">"คะแนนรวม: "</string>
+    <string name="create_account">สร้างบัญชีผู้ใช้</string>
+    <string name="log_in">เข้าสู่ระบบ</string>
+    <string name="prompt_pref">โปรดเลือกประเภทเกมและระดับความยากของเกม</string>
+    <string name="wel">สวัสดี</string>
+    <string name="fail_create">สร้างผู้ใช้ใหม่ไม่สำเร็จ</string>
+    <string name="fail_login">เข้าสู่ระบบไม่สำเร็จ</string>
+    <string name="fail_ranking">บันทึกคะแนนไม่สำเร็จ</string>
+    <string name="fill_email_pw">โปรดเติมอีเมลและรหัสผ่านให้ครบ</string>
+    <string name="name_blank">โปรดเติมชื่อผู้ใช้</string>
+    <string name="pw_6char">รหัสผ่านต้องมีมากกว่า 6 ตัวอักษร</string>
+    <string name="success_create">สร้างผู้ใช้ใหม่สำเร็จ</string>
+    <string name="success_login">เข้าสู่ระบบสำเร็จ</string>
+    <string name="success_ranking">บันทึกคะแนนสำเร็จ</string>
+    <string name="wrong_cfpw">รหัสผ่านไม่ตรงกัน</string>
+    <string name="wrong_email">อีเมลไม่ถูกต้อง</string>
+    <string name="invalid_info">ข้อมูลไม่ถูกต้อง</string>
 </resources>
