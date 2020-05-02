@@ -49,17 +49,27 @@ class GameActivity : AppCompatActivity() {
         difficulty = intent.getIntExtra("difficulty",0)
         gamemode = intent.getIntExtra("gamemode",0)
 
-        println(difficulty)
-        println(gamemode)
+        //println(difficulty)
+        //println(gamemode)
+
+        val gamemodeText = findViewById<TextView>(R.id.gamemode_text)
         if(gamemode==1){
             val show128 = findViewById<TextView>(R.id.show128)
             val show64 = findViewById<TextView>(R.id.show64)
             val show32 = findViewById<TextView>(R.id.show32)
             val show16 = findViewById<TextView>(R.id.show16)
             show128.text = "8"
+            show128.background = getDrawable(R.drawable.number_tooltip2)
             show64.text= "4"
+            show64.background = getDrawable(R.drawable.number_tooltip2)
             show32.text= "2"
+            show32.background = getDrawable(R.drawable.number_tooltip2)
             show16.text= "1"
+            show16.background = getDrawable(R.drawable.number_tooltip2)
+            gamemodeText.text= getString(R.string.hexadecimal)
+
+        }else{
+            gamemodeText.text= getString(R.string.decimal)
         }
 
 

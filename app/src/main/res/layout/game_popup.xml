@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:gravity="right"
     android:orientation="vertical"
     android:paddingLeft="10dp"
     android:paddingTop="10dp"
@@ -22,7 +25,7 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/binary"
+            android:id="@+id/decimal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -54,6 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:buttonTint="#56b52b"
             android:text="@string/easy" />
 
         <RadioButton
@@ -61,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:buttonTint="@color/colorButton"
             android:text="@string/medium" />
 
         <RadioButton
@@ -68,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:buttonTint="@color/colorStart"
             android:text="@string/hard" />
 
     </RadioGroup>
@@ -76,6 +82,7 @@
         android:id="@+id/start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_submit"
         android:text="@string/start" />
 
 </LinearLayout>

@@ -50,6 +50,16 @@ class MainActivity : AppCompatActivity() {
         exit.setOnClickListener {
             finish()
         }
+
+        settings.setOnClickListener{
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+        ranking.setOnClickListener{
+            val intent = Intent(this, RankingActivity::class.java)
+            startActivity(intent)
+        }
         play.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
             //startActivity(intent)
@@ -66,14 +76,12 @@ class MainActivity : AppCompatActivity() {
 
             val start =  gamePopup.findViewById<Button>(R.id.start)
             start.setOnClickListener{
-                var gamemodeId: Int = gamemode.checkedRadioButtonId
-                var difficultyId: Int = difficulty.checkedRadioButtonId
+                var gamemodeId = gamemode.checkedRadioButtonId
+                var difficultyId = difficulty.checkedRadioButtonId
                 if(difficultyId!=-1&&gamemodeId!=-1){
 
-                    val diffselect = gamePopup.findViewById<RadioButton>(difficultyId)
-                    val gamemodeselect = gamePopup.findViewById<RadioButton>(gamemodeId)
-                    intent.putExtra("difficulty",diffToNumber(diffselect.text))
-                    intent.putExtra("gamemode",gamemodeToNumber(gamemodeselect.text))
+                    intent.putExtra("difficulty",diffToNumber(resources.getResourceEntryName(difficultyId)))
+                    intent.putExtra("gamemode",gamemodeToNumber(resources.getResourceEntryName(gamemodeId)))
                     mAlertDialog.dismiss()
                     startActivity(intent)
                 }else{
@@ -81,15 +89,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            settings.setOnClickListener{
-                val intent = Intent(this, SettingsActivity::class.java)
-                startActivity(intent)
-            }
-
-            ranking.setOnClickListener{
-                val intent = Intent(this, RankingActivity::class.java)
-                startActivity(intent)
-            }
         }
     }
 
@@ -117,16 +116,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun diffToNumber(s:CharSequence):Int{
         when (s){
-            "Hard"->return 2
-            "Medium"->return 1
-            "Easy"->return 0
+            "hard"->return 2
+            "medium"->return 1
+            "easy"->return 0
         }
         return 0
     }
     private fun gamemodeToNumber(s:CharSequence):Int{
         when(s){
-            "Decimal"->return 0
-            "Hexadecimal"->return 1
+            "decimal"->return 0
+            "hexadecimal"->return 1
         }
         return 0
     }

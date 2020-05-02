@@ -13,7 +13,7 @@
     <string name="personalinfo">ข้อมูลส่วนตัว</string>
     <string name="prompt_email">อีเมล</string>
     <string name="prompt_password">รหัสผ่าน</string>
-    <string name="en_th">อังกฤษ/ไทย</string>
+    <string name="change_lang">เปลี่ยนภาษา</string>
     <string name="settings">การตั้งค่า</string>
     <string name="exit_game">ออกจากเกม</string>
     <string name="play_game">เริ่มเกม</string>
@@ -50,4 +50,5 @@
     <string name="wrong_cfpw">รหัสผ่านไม่ตรงกัน</string>
     <string name="wrong_email">อีเมลไม่ถูกต้อง</string>
     <string name="invalid_info">ข้อมูลไม่ถูกต้อง</string>
+    <string name="reset">รีเซ็ตคะแนน</string>
 </resources>

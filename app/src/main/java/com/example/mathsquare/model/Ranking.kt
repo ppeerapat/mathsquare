@@ -1,3 +1,5 @@
 package com.example.mathsquare.model
 
-class Ranking (val uid:String?,val score:Int,val name:String?)
+class Ranking constructor(var id:Int,val uid:String,val score:Int,val name:String,var rank:String){
+
+}
