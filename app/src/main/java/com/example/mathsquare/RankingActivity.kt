@@ -27,10 +27,10 @@ class RankingActivity : AppCompatActivity() {
         val hexRanking = findViewById<Button>(R.id.hex_ranking)
 
         decimalRanking.setOnClickListener {
-            val rankings = loadRanking(1,this)
+            loadRanking(0,this)
         }
         hexRanking.setOnClickListener {
-
+            loadRanking(1,this)
         }
 
         ranking_recycler.setHasFixedSize((true))

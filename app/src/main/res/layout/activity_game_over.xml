@@ -57,4 +57,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/submit_score" />
+
+    <TextView
+        android:id="@+id/newhighscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Personal Record"
+        tools:layout_editor_absoluteY="212dp" />
+
+    <TextView
+        android:id="@+id/highscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        tools:layout_editor_absoluteX="251dp"
+        tools:layout_editor_absoluteY="212dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

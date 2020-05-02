@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class UserActivity : AppCompatActivity() {
 
@@ -17,10 +18,18 @@ class UserActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         val logout = findViewById<Button>(R.id.logout)
+        val resetScore = findViewById<Button>(R.id.reset_score)
         val user = findViewById<TextView>(R.id.user)
 
         user.setText(getString(R.string.wel)+" "+auth.currentUser?.displayName+" !")
+        resetScore.setOnClickListener {
+            val uid:String = auth.currentUser?.uid!!
 
+            val hex = FirebaseDatabase.getInstance().getReference("rankings1").child(uid)
+            hex.removeValue()
+            val dec = FirebaseDatabase.getInstance().getReference("rankings0").child(uid)
+            dec.removeValue()
+        }
         logout.setOnClickListener {
             auth.signOut()
             finish()
