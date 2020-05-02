@@ -50,4 +50,5 @@
     <string name="wrong_cfpw">รหัสผ่านไม่ตรงกัน</string>
     <string name="wrong_email">อีเมลไม่ถูกต้อง</string>
     <string name="invalid_info">ข้อมูลไม่ถูกต้อง</string>
+    <string name="reset">รีเซ็ตคะแนน</string>
 </resources>
