@@ -47,7 +47,7 @@ class GameOver : AppCompatActivity() {
             }
             override fun onDataChange(p0: DataSnapshot) {
                 val highestScore = p0.child("score").getValue(Int::class.java)
-                if(highestScore==null){
+                if(highestScore!=null){
                     if(score>highestScore!!){
                         newer.text = "New "+newer.text
                         highscore.text = score.toString()
