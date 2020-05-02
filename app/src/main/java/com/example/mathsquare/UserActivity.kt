@@ -19,7 +19,7 @@ class UserActivity : AppCompatActivity() {
         val logout = findViewById<Button>(R.id.logout)
         val user = findViewById<TextView>(R.id.user)
 
-        user.setText(getString(R.string.welcome)+" "+auth.currentUser?.displayName+" !")
+        user.setText(getString(R.string.wel)+" "+auth.currentUser?.displayName+" !")
 
         logout.setOnClickListener {
             auth.signOut()
