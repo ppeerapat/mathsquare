@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -28,7 +29,9 @@ class UserActivity : AppCompatActivity() {
             val hex = FirebaseDatabase.getInstance().getReference("rankings1").child(uid)
             hex.removeValue()
             val dec = FirebaseDatabase.getInstance().getReference("rankings0").child(uid)
-            dec.removeValue()
+            dec.removeValue().addOnCompleteListener{
+                Toast.makeText(this,"Reset Successful", Toast.LENGTH_SHORT).show()
+            }
         }
         logout.setOnClickListener {
             auth.signOut()
