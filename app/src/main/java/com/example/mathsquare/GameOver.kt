@@ -39,9 +39,11 @@ class GameOver : AppCompatActivity() {
 
                 val rankingId = database.push().key as String
                 val rank = Ranking(
+                    0,
                     auth.currentUser?.uid,
                     score,
-                    auth.currentUser?.displayName
+                    auth.currentUser?.displayName,
+                    "Chicken"
                 )
                 database.child(rankingId).setValue(rank).addOnCompleteListener{
                     Toast.makeText(this,"Ranking Saved Successfully",Toast.LENGTH_SHORT).show()
