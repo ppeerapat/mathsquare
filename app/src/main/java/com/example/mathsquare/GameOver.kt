@@ -55,6 +55,10 @@ class GameOver : AppCompatActivity() {
                     }else{
                         highscore.text = highestScore.toString()
                     }
+                }else{
+                    if(auth.currentUser!=null){
+                        submit.isEnabled = true
+                    }
                 }
             }
         });
