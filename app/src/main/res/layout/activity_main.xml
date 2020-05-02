@@ -9,6 +9,19 @@
     tools:context=".ui.main.MainActivity">
 
 
+    <TextView
+        android:id="@+id/change_lang"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/change_lang"
+        android:textAlignment="center"
+        android:textColor="#FFFEFE"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/login"
         android:layout_width="32dp"
@@ -45,17 +58,17 @@
 
     <Button
         android:id="@+id/toggle_language"
-        android:layout_width="70dp"
+        android:layout_width="72dp"
         android:layout_height="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
         android:background="@android:color/transparent"
         android:drawableLeft="@drawable/engicon"
+        android:drawableRight="@drawable/thaiicon"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:drawableRight="@drawable/thaiicon" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/play_game"
