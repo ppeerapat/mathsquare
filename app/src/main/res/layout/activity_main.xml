@@ -9,13 +9,26 @@
     tools:context=".ui.main.MainActivity">
 
 
+    <TextView
+        android:id="@+id/change_lang"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/change_lang"
+        android:textAlignment="center"
+        android:textColor="#FFFEFE"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/login"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/profileicon"
+        android:background="@drawable/pfp"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,12 +58,14 @@
 
     <Button
         android:id="@+id/toggle_language"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:layout_weight="1"
-        android:text="@string/en_th"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/engicon"
+        android:drawableRight="@drawable/thaiicon"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
