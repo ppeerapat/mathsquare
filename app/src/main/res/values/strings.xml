@@ -54,4 +54,6 @@
     <string name="reset">Reset Score</string>
     <string name="tutorial">How To Play</string>
     <string name="full_tutorial">Tap the picture to see how to play!</string>
+    <string name="record">Personal Record: </string>
+    <string name="new_record">New Personal Record: </string>
 </resources>

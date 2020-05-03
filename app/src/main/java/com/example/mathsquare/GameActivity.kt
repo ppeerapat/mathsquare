@@ -1,13 +1,16 @@
 package com.example.mathsquare
 
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mathsquare.model.BinQuestion
+import kotlinx.android.synthetic.main.activity_game.*
 import kotlinx.android.synthetic.main.view_question.view.*
 import org.w3c.dom.Text
 import kotlin.random.Random
@@ -24,6 +27,8 @@ class GameActivity : AppCompatActivity() {
     val MINIMUM_SPAWN_TIME: Long = 400
     val DURATION_PENALTY = 10
     val MAX_QUESTIONS = 8
+    lateinit var animator: ObjectAnimator
+
     val easy = arrayListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 32, 33, 34, 64, 65, 66, 128, 129, 130)
     val medium = arrayListOf(19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
         46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 85, 127, 170, 240, 255)
@@ -39,6 +44,9 @@ class GameActivity : AppCompatActivity() {
     private val post = object : Runnable {
         override fun run() {
             createQuestion()
+
+            animator.setDuration(spawnTime)
+            animator.start()
             postQuestion.postDelayed(this, spawnTime)
         }
     }
@@ -53,6 +61,9 @@ class GameActivity : AppCompatActivity() {
         //println(gamemode)
 
         val gamemodeText = findViewById<TextView>(R.id.gamemode_text)
+        val timer = findViewById<ImageView>(R.id.timer)
+        animator = ObjectAnimator.ofFloat(timer,"scaleX",0f,1f);
+
         if(gamemode==1){
             val show128 = findViewById<TextView>(R.id.show128)
             val show64 = findViewById<TextView>(R.id.show64)

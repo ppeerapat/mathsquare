@@ -53,4 +53,6 @@
     <string name="reset">รีเซ็ตคะแนน</string>
     <string name="tutorial">วิธีเล่น</string>
     <string name="full_tutorial">กดรูปภาพเพื่อดูวิธีการเล่น</string>
+    <string name="record">คะแนนส่วนตัวสูงสุด: </string>
+    <string name="new_record">คะแนนส่วนตัวใหม่สูงสุด: </string>
 </resources>

@@ -40,32 +40,32 @@ class GameOver : AppCompatActivity() {
 
         val submit = findViewById<Button>(R.id.submit_score)
         submit.isEnabled = false
-        val database = FirebaseDatabase.getInstance().getReference("rankings"+gamemode.toString()).child(auth.currentUser?.uid!!)
-        database.addListenerForSingleValueEvent(object: ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {
 
-            }
-            override fun onDataChange(p0: DataSnapshot) {
-                val highestScore = p0.child("score").getValue(Int::class.java)
-                if(highestScore!=null){
-                    if(score>highestScore!!){
-                        newer.text = "New "+newer.text
-                        highscore.text = score.toString()
-                        submit.isEnabled = true
-                    }else{
-                        highscore.text = highestScore.toString()
-                    }
-                }else{
-                    if(auth.currentUser!=null){
-                        submit.isEnabled = true
-                    }
-                }
-            }
-        });
 
 
         if(auth.currentUser!=null) {
+            val database = FirebaseDatabase.getInstance().getReference("rankings"+gamemode.toString()).child(auth.currentUser?.uid!!)
+            database.addListenerForSingleValueEvent(object: ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {
 
+                }
+                override fun onDataChange(p0: DataSnapshot) {
+                    val highestScore = p0.child("score").getValue(Int::class.java)
+                    if(highestScore!=null){
+                        if(score>highestScore!!){
+                            newer.text = getString(R.string.new_record)
+                            highscore.text = score.toString()
+                            submit.isEnabled = true
+                        }else{
+                            highscore.text = highestScore.toString()
+                        }
+                    }else{
+                        newer.text = getString(R.string.new_record)
+                        highscore.text = score.toString()
+                        submit.isEnabled = true
+                    }
+                }
+            });
             submit.setOnClickListener {
 
                 val database = FirebaseDatabase.getInstance().getReference("rankings"+gamemode.toString())
