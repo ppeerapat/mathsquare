@@ -56,4 +56,8 @@
     <string name="full_tutorial">Tap the picture to see how to play!</string>
     <string name="record">Personal Record: </string>
     <string name="new_record">New Personal Record: </string>
+    <string name="ranking">Ranking</string>
+    <string name="bigbrain">BigBrain</string>
+    <string name="mediumbrain">MediumBrain</string>
+    <string name="smallbrain">SmallBrain</string>
 </resources>

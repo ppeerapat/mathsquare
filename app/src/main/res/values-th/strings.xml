@@ -55,4 +55,8 @@
     <string name="full_tutorial">กดรูปภาพเพื่อดูวิธีการเล่น</string>
     <string name="record">คะแนนส่วนตัวสูงสุด: </string>
     <string name="new_record">คะแนนส่วนตัวใหม่สูงสุด: </string>
+    <string name="ranking">อันดับคะแนน</string>
+    <string name="bigbrain">ยอดเยี่ยม</string>
+    <string name="mediumbrain">พอใช้</string>
+    <string name="smallbrain">อ่อนหัด</string>
 </resources>

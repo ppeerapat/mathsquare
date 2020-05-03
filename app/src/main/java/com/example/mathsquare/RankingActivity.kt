@@ -84,9 +84,9 @@ class RankingActivity : AppCompatActivity() {
                         var rank:String =""
 
                         when {
-                            ranker<1 -> rank = "BigBrain"
-                            ranker<2 -> rank = "MediumBrain"
-                            ranker<3 -> rank = "SmallBrain"
+                            ranker<1 -> rank = getString(R.string.bigbrain)
+                            ranker<2 -> rank = getString(R.string.mediumbrain)
+                            ranker<3 -> rank = getString(R.string.smallbrain)
                         };
                         list.get(i).id = ranker+1
                         list.get(i).rank=rank
