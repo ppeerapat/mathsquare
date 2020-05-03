@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val play = findViewById<Button>(R.id.play_game)
         val user = findViewById<TextView>(R.id.logged_user)
         val exit = findViewById<Button>(R.id.exit_game)
-        val settings = findViewById<Button>(R.id.view_settings)
+        val tutorial = findViewById<Button>(R.id.view_tutorial)
         val ranking = findViewById<Button>(R.id.view_ranking)
 
         val lang = findViewById<Button>(R.id.toggle_language)
@@ -51,8 +51,8 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-        settings.setOnClickListener{
-            val intent = Intent(this, SettingsActivity::class.java)
+        tutorial.setOnClickListener{
+            val intent = Intent(this, TutorialActivity::class.java)
             startActivity(intent)
         }
 
@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() {
     private fun setLocale(Lang: String?) {
         val languageCode = Lang
         val config = resources.configuration
-        val locale = Locale(languageCode) //get locale of this language
+        val locale = Locale(languageCode.toString()) //get locale of this language
 
         Locale.setDefault(locale) //set new locale or new language
         //config.locale = locale

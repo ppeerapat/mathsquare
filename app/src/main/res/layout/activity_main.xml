@@ -101,13 +101,13 @@
         app:layout_constraintTop_toBottomOf="@id/play_game" />
 
     <Button
-        android:id="@+id/view_settings"
+        android:id="@+id/view_tutorial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:width="@dimen/button"
         android:background="@drawable/button_setting"
-        android:text="@string/settings"
+        android:text="@string/tutorial"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -126,7 +126,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_settings" />
+        app:layout_constraintTop_toBottomOf="@id/view_tutorial" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
