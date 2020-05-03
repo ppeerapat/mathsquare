@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mathsquare.model.Ranking
 import com.google.firebase.database.DataSnapshot
@@ -36,11 +38,15 @@ class RankingActivity : AppCompatActivity() {
         val a:List<Ranking> = arrayListOf<Ranking>()
         loadRanking(0,this)
         decimalRanking.setOnClickListener {
+            decimalRanking.setBackgroundColor(resources.getColor(R.color.colorRed))
+            hexRanking.setBackgroundColor(0x00FFFFFF)
             ranking_recycler.adapter = RankingAdapter(a)
             ranking_recycler.layoutManager = LinearLayoutManager(this)
             loadRanking(0,this)
         }
         hexRanking.setOnClickListener {
+            decimalRanking.setBackgroundColor(0x00FFFFFF)
+            hexRanking.setBackgroundColor(resources.getColor(R.color.colorRed))
             ranking_recycler.adapter = RankingAdapter(a)
             ranking_recycler.layoutManager = LinearLayoutManager(this)
             loadRanking(1,this)
