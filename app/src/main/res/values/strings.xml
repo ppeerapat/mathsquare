@@ -52,4 +52,6 @@
     <string name="success_ranking">Ranking Saved Successfully</string>
     <string name="fail_ranking">Failed to save Ranking</string>
     <string name="reset">Reset Score</string>
+    <string name="tutorial">How To Play</string>
+    <string name="full_tutorial">dhasjkflasklf</string>
 </resources>
