@@ -51,4 +51,6 @@
     <string name="wrong_email">อีเมลไม่ถูกต้อง</string>
     <string name="invalid_info">ข้อมูลไม่ถูกต้อง</string>
     <string name="reset">รีเซ็ตคะแนน</string>
+    <string name="record">คะแนนส่วนตัวสูงสุด</string>
+    <string name="new_record">คะแนนส่วนตัวใหม่สูงสุด</string>
 </resources>

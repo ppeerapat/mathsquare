@@ -89,7 +89,7 @@
         android:id="@+id/newhighscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Personal Record"
+        android:text="@string/new_record"
         tools:layout_editor_absoluteY="212dp" />
 
     <TextView

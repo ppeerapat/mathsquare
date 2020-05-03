@@ -26,7 +26,7 @@ class RankingActivity : AppCompatActivity() {
         val decimalRanking = findViewById<Button>(R.id.decimal_ranking)
         val hexRanking = findViewById<Button>(R.id.hex_ranking)
         val a:List<Ranking> = arrayListOf<Ranking>()
-
+        loadRanking(0,this)
         decimalRanking.setOnClickListener {
             ranking_recycler.adapter = RankingAdapter(a)
             ranking_recycler.layoutManager = LinearLayoutManager(this)
