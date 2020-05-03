@@ -8,6 +8,14 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
+//UserActivity.kt
+//
+//Declares the user activity class with methods used for the user activity
+//
+//Peerapat Potch-a-nant
+//
+//March - April 2020
+
 class UserActivity : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth

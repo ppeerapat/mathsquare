@@ -15,6 +15,13 @@ import kotlinx.android.synthetic.main.view_question.view.*
 import org.w3c.dom.Text
 import kotlin.random.Random
 
+//GameActivity
+//
+//Declares the game activity class with methods used for the game activity
+//
+//Peerapat Potch-a-nant
+//
+//March - April 2020
 
 class GameActivity : AppCompatActivity() {
 

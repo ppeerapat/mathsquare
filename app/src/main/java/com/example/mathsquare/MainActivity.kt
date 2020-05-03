@@ -10,6 +10,13 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.game_popup.view.*
 import java.util.*
 
+//MainActivity.kt
+//
+//Declares the main activity class with methods used for the main activity
+//
+//Peerapat Potch-a-nant, modified by Tanyarin Karuchit & Chanaporn Chaisumritchoke
+//
+//March - April 2020
 
 class MainActivity : AppCompatActivity() {
 
@@ -130,23 +137,26 @@ class MainActivity : AppCompatActivity() {
         return 0
     }
 
+    //for changing the language on clicking the lang button by getting current value of locale (EN/TH)
     private fun changeLang(){
         if(Locale.getDefault().toString() == "th_TH" || Locale.getDefault().toString() == "th") {
-            setLocale("en") //if language is Thai change the language to eng
+            setLocale("en")
         } else if (Locale.getDefault().toString() == "en" || Locale.getDefault().toString() == "en_US") {
-            setLocale("th")// if language eng change to thai
+            setLocale("th")
         }
     }
+
+    //for reassigning Locale default value based on input Lang, then recreate application to see changes
     private fun setLocale(Lang: String?) {
         val languageCode = Lang
         val config = resources.configuration
-        val locale = Locale(languageCode.toString()) //get locale of this language
+        val locale = Locale(languageCode.toString())
 
-        Locale.setDefault(locale) //set new locale or new language
+        Locale.setDefault(locale)
         //config.locale = locale
         config.setLocale(locale)
-        resources.updateConfiguration(config, resources.displayMetrics) //update config to new resource
+        resources.updateConfiguration(config, resources.displayMetrics)
         //createConfigurationContext(config)
-        recreate() //recreate the app
+        recreate()
     }
 }

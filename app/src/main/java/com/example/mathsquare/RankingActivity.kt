@@ -16,6 +16,14 @@ import kotlinx.android.synthetic.main.activity_game_over.*
 import kotlinx.android.synthetic.main.activity_ranking.*
 import kotlinx.android.synthetic.main.game_popup.*
 
+//RankingActivity.kt
+//
+//Declares the ranking activity class with methods used for the ranking activity
+//
+//Peerapat Potch-a-nant, modified by Chanaporn Chaisumritchoke
+//
+//March - April 2020
+
 class RankingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,9 +84,9 @@ class RankingActivity : AppCompatActivity() {
                         var rank:String =""
 
                         when {
-                            ranker<1 -> rank = "BigBrain"
-                            ranker<2 -> rank = "MediumBrain"
-                            ranker<3 -> rank = "SmallBrain"
+                            ranker<1 -> rank = getString(R.string.bigbrain)
+                            ranker<2 -> rank = getString(R.string.mediumbrain)
+                            ranker<3 -> rank = getString(R.string.smallbrain)
                         };
                         list.get(i).id = ranker+1
                         list.get(i).rank=rank

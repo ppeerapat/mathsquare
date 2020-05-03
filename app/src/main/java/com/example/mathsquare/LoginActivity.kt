@@ -10,6 +10,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import kotlinx.android.synthetic.main.activity_main.view.*
 
+//LoginActivity.kt
+//
+//Declares the login activity class with methods used for the login activity
+//
+//Peerapat Potch-a-nant
+//
+//March - April 2020
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth
