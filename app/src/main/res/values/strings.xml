@@ -52,6 +52,6 @@
     <string name="success_ranking">Ranking Saved Successfully</string>
     <string name="fail_ranking">Failed to save Ranking</string>
     <string name="reset">Reset Score</string>
-    <string name="record">Personal Record</string>
-    <string name="new_record">New Personal Record</string>
+    <string name="record">Personal Record: </string>
+    <string name="new_record">New Personal Record: </string>
 </resources>

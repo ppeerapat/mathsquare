@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".GameActivity">
 
@@ -13,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:paddingLeft="30dp"
@@ -196,6 +197,7 @@
         android:id="@+id/timer"
         android:layout_width="match_parent"
         android:layout_height="10dp"
+        android:layout_gravity="bottom"
         app:srcCompat="@drawable/rounded_edittext" />
 
 </LinearLayout>
