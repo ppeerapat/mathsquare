@@ -13,11 +13,15 @@ class TutorialActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutorial)
 
+        val back = findViewById<Button>(R.id.back_button)
         val tutorialImage = findViewById<ImageView>(R.id.tutorial_gif).apply {
             setBackgroundResource(R.drawable.tutorial)
             tutorialAnimation = background as AnimationDrawable
         }
 
         tutorialImage.setOnClickListener({ tutorialAnimation.start() })
+        back.setOnClickListener {
+            finish()
+        }
     }
 }
