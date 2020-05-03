@@ -52,5 +52,5 @@
     <string name="invalid_info">ข้อมูลไม่ถูกต้อง</string>
     <string name="reset">รีเซ็ตคะแนน</string>
     <string name="tutorial">วิธีเล่น</string>
-    <string name="full_tutorial">" ตามนั้น"</string>
+    <string name="full_tutorial">กดรูปภาพเพื่อดูวิธีการเล่น</string>
 </resources>
