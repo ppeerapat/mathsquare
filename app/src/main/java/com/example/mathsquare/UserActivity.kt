@@ -26,6 +26,7 @@ class UserActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
+        val back = findViewById<Button>(R.id.back_button)
         val logout = findViewById<Button>(R.id.logout)
         val resetScore = findViewById<Button>(R.id.reset_score)
         val user = findViewById<TextView>(R.id.user)
@@ -43,6 +44,9 @@ class UserActivity : AppCompatActivity() {
         }
         logout.setOnClickListener {
             auth.signOut()
+            finish()
+        }
+        back.setOnClickListener {
             finish()
         }
     }
