@@ -9,6 +9,14 @@ import com.example.mathsquare.model.Ranking
 import kotlinx.android.synthetic.main.ranking_card.view.*
 import org.w3c.dom.Text
 
+//RankingAdapter.kt
+//
+//Declares the ranking adapter class with methods used for the ranking items
+//
+//Peerapat Potch-a-nant
+//
+//March - April 2020
+
 class RankingAdapter(private val rankingList: List<Ranking>) : RecyclerView.Adapter<RankingAdapter.RankingViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RankingViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.ranking_card,parent,false)

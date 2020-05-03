@@ -38,9 +38,6 @@
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SettingsActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".TutorialActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

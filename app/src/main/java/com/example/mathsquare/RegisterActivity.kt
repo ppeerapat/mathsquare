@@ -10,7 +10,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
-import kotlinx.android.synthetic.main.activity_register.*
+
+//RegisterActivity.kt
+//
+//Declares the register activity class with methods used for the register activity
+//
+//Peerapat Potch-a-nant
+//
+//March - April 2020
 
 class RegisterActivity : AppCompatActivity() {
 

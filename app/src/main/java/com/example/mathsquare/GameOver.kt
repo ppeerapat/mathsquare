@@ -19,6 +19,13 @@ import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_ranking.*
 import org.w3c.dom.Text
 
+//GameOver.kt
+//
+//Declares the game over class with methods used for the game over activity
+//
+//Peerapat Potch-a-nant
+//
+//March - April 2020
 
 class GameOver : AppCompatActivity() {
 
